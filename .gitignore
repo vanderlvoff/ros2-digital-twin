@@ -49,3 +49,13 @@ qtcreator-*
 
 # Catkin custom files
 CATKIN_IGNORE
+
+# Ros2
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# colcon/CMake output
+build
+install
+log
