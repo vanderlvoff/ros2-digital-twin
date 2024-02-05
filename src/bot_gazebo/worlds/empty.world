@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="yura">
+    <!-- A global light source -->
+  </world>
+</sdf>
