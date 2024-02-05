@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<gazebo reference="front_right_wheel">
+<material>
+  Gazebo/Black
+</material>
+<kp>1000000.0</kp>
+<kd>100.0</kd>
+<mu1>1.0</mu1>
+<mu2>1.0</mu2>
+<maxVel>1.0</maxVel>
+<minDepth>0.00</minDepth>
+</gazebo>
+
+ <gazebo>
+  <plugin name="diff_drive_controlle" filename="libgazebo_ros_diff_Drive.so">
+
+    <update_rate>30</update_rate>
+    <num_wheel_pairs>2</num_wheel_pairs>
+    <left_joint>rear_left_engine_to_rear_left_shaft</left_joint>
+    <left_joint>front_left_engine_to_front_left_shaft</left_joint>
+    <wheel_separation>0.155</wheel_separation>
+    <wheel_diameter>0.07</wheel_diameter>
+    <right_joint>rear_right_engine_to_rear_right_shaft</right_joint>
+    <right_joint>front_right_engine_to_front_right_shaft</right_joint>
+    <wheel_separation>0.155</wheel_separation>
+    <wheel_diameter>0.07</wheel_diameter>
+
+    <max_wheel_torque>20</max_wheel_torque>
+    <max_wheel_acceleration>1.0</max_wheel_acceleration>
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>true</publish_odom_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
+
+    <odometry_topic>odom</odometry_topic>
+    <odometry_frame>odom</odometry_frame>
+
+    <odometryRate>20.0</odometryRate>
+    <robot_base_frame>base_footprint</robot_base_frame>
+    <cmd_timeout>3.0</cmd_timeout>
+  </plugin>
+</gazebo>
+</robot>

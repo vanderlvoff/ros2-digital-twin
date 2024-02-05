@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<link name="base_footprint" />
+	<link name="base_link">
+		<xacro:box_inertia m="${base_mass}" x="${base_length}"
+			y="${base_width}" z="${base_height}" angle="0"/>
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+			<geometry>
+				<box size="${base_length} ${base_width} ${base_height}" />
+			</geometry>
+			<material name="orange" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+			<geometry>
+				<box size="${base_length} ${base_width} ${base_height}" />
+			</geometry>
+		</collision>
+	</link>
+	<link name="front_right_engine">
+			<xacro:box_inertia m="${engine_mass}" x="${engine_length}"
+			y="${engine_width}" z="${engine_height}" angle="${pi/4}"/>
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${pi/2}" />
+			<geometry>
+				<box size="${engine_length} ${engine_width} ${engine_height}" />
+			</geometry>
+			<material name="grey" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${pi/2}" />
+			<geometry>
+				<box size="${engine_length} ${engine_width} ${engine_height}" />
+			</geometry>
+		</collision>
+	</link>
+	<link name="front_right_shaft">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${shaft_radius}" length="${shaft_length}"/>
+			</geometry>
+			<material name="black" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${shaft_radius}" length="${shaft_length}"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="front_right_wheel">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+			</geometry>
+			<material name="brown" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="front_left_engine">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${pi/2}" />
+			<geometry>
+				<box size="${engine_length} ${engine_width} ${engine_height}" />
+			</geometry>
+			<material name="grey" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${pi/2}" />
+			<geometry>
+				<box size="${engine_length} ${engine_width} ${engine_height}" />
+			</geometry>
+		</collision>
+	</link>
+	<link name="front_left_shaft">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${shaft_radius}" length="${shaft_length}"/>
+			</geometry>
+			<material name="black" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${shaft_radius}" length="${shaft_length}"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="front_left_wheel">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+			</geometry>
+			<material name="brown" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="rear_right_engine">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${pi/2}" />
+			<geometry>
+				<box size="${engine_length} ${engine_width} ${engine_height}" />
+			</geometry>
+			<material name="grey" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${pi/2}" />
+			<geometry>
+				<box size="${engine_length} ${engine_width} ${engine_height}" />
+			</geometry>
+		</collision>
+	</link>
+	<link name="rear_right_shaft">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${shaft_radius}" length="${shaft_length}"/>
+			</geometry>
+			<material name="black" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${shaft_radius}" length="${shaft_length}"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="rear_right_wheel">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+			</geometry>
+			<material name="brown" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="rear_left_engine">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${pi/2}" />
+			<geometry>
+				<box size="${engine_length} ${engine_width} ${engine_height}" />
+			</geometry>
+			<material name="grey" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${pi/2}" />
+			<geometry>
+				<box size="${engine_length} ${engine_width} ${engine_height}" />
+			</geometry>
+		</collision>
+	</link>
+	<link name="rear_left_shaft">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${shaft_radius}" length="${shaft_length}"/>
+			</geometry>
+			<material name="black" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${shaft_radius}" length="${shaft_length}"/>
+			</geometry>
+		</collision>
+	</link>
+	<link name="rear_left_wheel">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+			</geometry>
+			<material name="brown" />
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0" />
+			<geometry>
+				<cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+			</geometry>
+		</collision>
+	</link>
+</robot>
